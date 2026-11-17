@@ -243,5 +243,11 @@ function tidy(inp){ var c=cents(inp.value); inp.value = c===0 && inp.value.trim(
   </div>
 </footer>
 
-<script src="/lead-source.js" defer></script></body>
+<script src="/lead-source.js" defer></script><div id="ppg-trial-bar" hidden style="position:fixed;left:12px;right:12px;bottom:12px;z-index:50;max-width:760px;margin:0 auto;background:#1f2a24;color:#fff;border-radius:12px;padding:14px 44px 14px 16px;box-shadow:0 6px 24px rgba(0,0,0,.25);font:15px/1.45 system-ui,sans-serif">
+<button type="button" aria-label="Close" onclick="this.parentNode.hidden=true;try{sessionStorage.setItem('ppgbar','x')}catch(e){}" style="position:absolute;top:6px;right:8px;background:none;border:0;color:#fff;font-size:22px;cursor:pointer">&times;</button>
+<strong>Run this three-way check from your settlement export, QuickBooks file and bank statement every month.</strong> No card needed.
+<span style="display:inline-flex;flex-wrap:wrap;gap:10px;margin-top:8px;align-items:center"><a href="https://license.getsaleledger.com/trial" style="background:#fff;color:#1f2a24;padding:8px 14px;border-radius:8px;font-weight:700;text-decoration:none">Start the free 30-day trial</a>
+<a href="https://apps.microsoft.com/detail/9N46593KX9HK?mode=direct&cid=sd-tool-bar" style="color:#fff">or get SaleLedger from the Microsoft Store</a></span></div>
+<script>(function(){var b=document.getElementById('ppg-trial-bar');if(!b)return;var done=false;function show(){if(done)return;done=true;try{if(sessionStorage.getItem('ppgbar'))return}catch(e){}setTimeout(function(){b.hidden=false},2500)}var m=document.querySelector('main')||document.body;var n=0;m.addEventListener('change',function(){if(++n>=4)show()});m.addEventListener('click',function(e){if(e.target.closest('button'))show()});})();</script>
+</body>
 </html>
