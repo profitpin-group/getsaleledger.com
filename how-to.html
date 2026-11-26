@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Reconcile an Auction Escrow Account | SaleLedger</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SaleLedger">
+  <meta property="og:title" content="How to Reconcile an Auction Escrow Account | SaleLedger">
+  <meta property="og:description" content="How to reconcile an auction escrow (trust) account with SaleLedger: start the free trial, bring in your trust ledger and bank statement, read the exceptions and save the report.">
+  <meta property="og:url" content="https://getsaleledger.com/how-to.html">
+  <meta name="twitter:card" content="summary">
+<meta name="description" content="How to reconcile an auction escrow (trust) account with SaleLedger: start the free trial, bring in your trust ledger and bank statement, read the exceptions and save the report.">
+<link rel="canonical" href="https://getsaleledger.com/how-to.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F3EB; --panel: #FFFFFF; --ink: #14201B; --ink-soft: #3C463F;
+    --green: #112C25; --green-mid: #1D4438; --brass: #8A6530; --brick: #7A2626;
+    --brick-bg: rgba(122, 38, 38, 0.07); --rule: rgba(17, 44, 37, 0.18);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Spectral', Georgia, serif; font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--green-mid); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+  .measure { max-width: 640px; }
+  header { padding: 22px 0; border-bottom: 1px solid var(--rule); background: var(--bg); position: sticky; top: 0; z-index: 10; }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+  .brandmark { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+  .brandmark .icon-mark { width: 30px; height: 30px; flex-shrink: 0; background: var(--green); border-radius: 5px; display: flex; align-items: center; justify-content: center; }
+  .brandmark .icon-mark svg { width: 16px; height: 16px; color: var(--bg); }
+  .brandmark .text-stack { display: flex; flex-direction: column; line-height: 1.15; }
+  .brandmark .name { font-weight: 600; font-size: 18px; color: var(--green); letter-spacing: -0.01em; }
+  .brandmark .by { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.05em; color: var(--ink-soft); text-transform: uppercase; margin-top: 1px; }
+  nav { display: flex; align-items: center; gap: 30px; }
+  nav a { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--ink-soft); text-decoration: none; }
+  nav a:hover { color: var(--green); }
+  .btn-primary { display: inline-flex; align-items: center; gap: 6px; background: var(--green); color: var(--bg) !important; text-decoration: none; padding: 11px 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500; border-radius: 3px; border: 1px solid var(--green); }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--green); text-decoration: none; padding: 11px 20px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; border-radius: 3px; border: 1px solid var(--green); }
+  .section-num { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brass); display: block; margin-bottom: 12px; }
+  h1 { font-size: 44px; line-height: 1.1; font-weight: 600; margin: 0 0 18px; letter-spacing: -0.01em; text-wrap: balance; }
+  h2 { font-size: 28px; line-height: 1.2; font-weight: 600; margin: 0 0 12px; text-wrap: balance; }
+  h3 { font-size: 20px; font-weight: 600; margin: 0 0 8px; }
+  p { margin: 0 0 14px; }
+  .lede { font-size: 19px; color: var(--ink-soft); }
+  .intro { padding: 60px 32px 36px; }
+  section { padding: 44px 0; }
+  .rule-top { border-top: 1px solid var(--rule); }
+  .files { list-style: none; padding: 0; margin: 12px 0 0; }
+  .files li { display: grid; grid-template-columns: 200px 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px dashed var(--rule); font-size: 15.5px; }
+  .files li:last-child { border-bottom: none; }
+  .files code { font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; color: var(--green); overflow-wrap: anywhere; }
+  code { font-family: 'IBM Plex Mono', monospace; font-size: 0.92em; overflow-wrap: anywhere; }
+  .final-cta { text-align: left; padding: 56px 0 64px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+  footer { border-top: 1px solid var(--rule); padding: 36px 0; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+  .legal-links { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--ink-soft); width: 100%; margin-top: 8px; }
+  .legal-links a { color: var(--ink-soft); }
+  .legal-note { font-size: 13px; color: var(--ink-soft); max-width: 760px; margin: 10px 0 0; line-height: 1.5; width: 100%; }
+  .consent { font-size: 13px; color: var(--ink-soft); }
+  footer .tagline { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--ink-soft); }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+  /* How-to page: table of contents and numbered steps */
+  .toc { background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; padding: 22px 26px; max-width: 640px; }
+  .toc ol { margin: 0; padding-left: 22px; }
+  .toc li { padding: 3px 0; font-size: 16px; }
+  ol.howto { max-width: 640px; margin: 6px 0 14px; padding-left: 24px; }
+  ol.howto li { padding: 4px 0 4px 4px; }
+  ol.howto li::marker { font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: var(--brass); }
+  ul.plain { max-width: 640px; margin: 6px 0 14px; padding-left: 22px; }
+  ul.plain li { padding: 3px 0; }
+  .note { border-left: 3px solid var(--brass); padding: 10px 14px; background: rgba(138, 101, 48, 0.08); font-size: 15px; margin: 10px 0 14px; max-width: 640px; }
+  .note.caution { border-left-color: var(--brick); background: var(--brick-bg); }
+  section h3 { margin-top: 22px; }
+  @media (max-width: 860px) {
+    h1 { font-size: 34px; }
+    h2 { font-size: 24px; }
+    .files li { grid-template-columns: 1fr; gap: 2px; }
+    nav { gap: 16px; }
+    nav a:not(.btn-primary) { display: none; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding: 0 16px; }
+    .intro { padding: 40px 16px 28px; }
+    .toc { padding: 18px 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+  <link rel="apple-touch-icon" href="/icon-512.png">
+</head>
+<body><div id="ppg-home-strip" style="background:#1f2a24;color:#fff;font:600 15px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;padding:10px 16px;text-align:center;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;align-items:center"><span>Free 30-day trial. No card, no automatic charge.</span><a href="https://license.getsaleledger.com/trial" style="background:#fff;color:#1f2a24;padding:7px 14px;border-radius:6px;text-decoration:none;font-weight:700">Start free trial</a><a href="https://apps.microsoft.com/detail/9N46593KX9HK?mode=direct&amp;cid=sd-home-strip" style="color:#fff;text-decoration:underline;text-underline-offset:3px">or get it from the Microsoft Store</a></div>
+
+<header>
+  <div class="wrap header-inner">
+    <a href="/" class="brandmark">
+      <span class="icon-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 3h11l3 3v15H5z"/><path d="M9 9h7M9 13h7M9 17h4"/></svg>
+      </span>
+      <span class="text-stack">
+        <span class="name">SaleLedger</span>
+        <span class="by">by ProfitPin</span>
+      </span>
+    </a>
+    <nav>
+      <a href="/#workflow">How it works</a>
+      <a href="/tutorial.html">Tutorial</a>
+      <a href="/#questions">Questions</a>
+      <a href="https://license.getsaleledger.com/trial" class="btn-primary">Start free trial</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap intro">
+  <span class="section-num">SaleLedger · How to</span>
+  <h1>How to reconcile an auction escrow account</h1>
+  <p class="lede measure">Short answers for SaleLedger, the Windows app that checks an auction trust (escrow) account each month. Each answer has numbered steps. SaleLedger checks records and prepares a report. It does not provide accounting or legal advice and does not file anything on your behalf.</p>
+  <p class="measure">Want to practise first? The <a href="tutorial.html">tutorial</a> walks through one fictional month with practice files and a video.</p>
+
+  <div class="toc" role="navigation" aria-label="On this page" style="margin-top:24px;">
+    <span class="section-num">On this page</span>
+    <ol>
+      <li><a href="#get-the-app">How do I download SaleLedger for Windows?</a></li>
+      <li><a href="#free-trial">How do I start the free trial and get a license key?</a></li>
+      <li><a href="#activate">How do I activate SaleLedger?</a></li>
+      <li><a href="#import-files">Auction Flex reconciliation: bringing in your records and bank statement</a></li>
+      <li><a href="#run-reconciliation">Auction trust account reconciliation, step by step</a></li>
+      <li><a href="#read-exceptions">Trust account doesn't match the bank statement? Reading the exceptions</a></li>
+      <li><a href="#fix-problems">How to fix a problem SaleLedger flags</a></li>
+      <li><a href="#save-report">How to save, print or export the reconciliation report</a></li>
+      <li><a href="#backup-move">How to back up SaleLedger or move it to another computer</a></li>
+      <li><a href="#subscribe-cancel-refund">How to subscribe, cancel or get a refund</a></li>
+      <li><a href="#get-help">How to get help with SaleLedger</a></li>
+      <li><a href="#faq">Common questions</a></li>
+    </ol>
+  </div>
+</div>
+
+<section class="rule-top" id="get-the-app">
+  <div class="wrap">
+    <h2>How do I download SaleLedger for Windows?</h2>
+    <p class="measure">SaleLedger is a Windows app. There are two ways to install it.</p>
+    <h3>From the Microsoft Store (recommended)</h3>
+    <ol class="howto">
+      <li>Open <a href="https://apps.microsoft.com/detail/9N46593KX9HK?mode=direct&amp;cid=sd-index" rel="noopener">SaleLedger in the Microsoft Store</a>.</li>
+      <li>Install it. Microsoft checks and signs Store apps, so Windows installs it without an unknown-publisher warning.</li>
+      <li>Open SaleLedger from the Start menu.</li>
+    </ol>
+    <h3>With the installer</h3>
+    <ol class="howto">
+      <li><a href="https://github.com/profitpin-group/getsaleledger.com/releases/latest/download/SaleLedger-Setup.exe">Download SaleLedger-Setup.exe</a>.</li>
+      <li>Run it once. It puts a SaleLedger icon on your desktop.</li>
+      <li>Double-click that icon to open SaleLedger.</li>
+    </ol>
+    <div class="note caution">The installer isn't code-signed yet, so Windows may show a "Windows protected your PC" notice the first time. Choose <em>More info → Run anyway</em>. The Store version does not show this notice.</div>
+    <p class="measure">Either way, SaleLedger opens in your web browser at <code>127.0.0.1:5151</code>. That page is served by your own computer, not by us. If SaleLedger is already running, opening it again just opens the browser tab again. To close the app, use the <strong>Quit SaleLedger</strong> button at the bottom of the page.</p>
+  </div>
+</section>
+
+<section class="rule-top" id="free-trial">
+  <div class="wrap">
+    <h2>How do I start the free trial and get a license key?</h2>
+    <p class="measure">The trial is 30 days. No card. No automatic renewal. No charge unless you choose to subscribe later.</p>
+    <ol class="howto">
+      <li>Go to the <a href="https://license.getsaleledger.com/trial">free trial page</a>.</li>
+      <li>Type your email address.</li>
+      <li>Tick the box to agree to the <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</li>
+      <li>Click <strong>Send verification code</strong>. Sending can take up to 20 seconds.</li>
+      <li>Check your inbox (and spam) for an email with an 8-digit code. The code expires in 10 minutes.</li>
+      <li>Type the code into <strong>Verification code</strong> and click <strong>Verify and activate trial</strong>.</li>
+      <li>The page shows <strong>Your license key</strong>. It looks like <code>SL-XXXX-XXXX-XXXX-XXXX</code>. Click <strong>Copy key</strong> and keep it somewhere safe.</li>
+    </ol>
+    <div class="note">There is one trial per email account. If you lose your key, go back to the trial page and verify the same email again. That shows the same key and restores the same trial. It does not restart it. If you ask for codes too often, the page asks you to wait. Daily limits also apply.</div>
+  </div>
+</section>
+
+<section class="rule-top" id="activate">
+  <div class="wrap">
+    <h2>How do I activate SaleLedger?</h2>
+    <ol class="howto">
+      <li>Open SaleLedger. The first time, it shows <strong>Please read and agree</strong>.</li>
+      <li>Read the three points, tick the box, and click <strong>I agree</strong>. Your agreement is recorded on your computer with the date.</li>
+      <li>On <strong>Enter your license key</strong>, paste your key and click <strong>Activate</strong>. You can type it with or without the dashes.</li>
+      <li>A line at the top shows your status, for example "Free trial: 30 day(s) left."</li>
+    </ol>
+    <div class="note">Activation needs an internet connection. After that, the app sends your license key about every six hours to confirm your subscription. The first time it opens on a computer, it also sends one anonymous count with no license key, name or file. Your ledger, bank statement and consignor data stay on your computer. If you are offline, it keeps working for seven days on the last confirmation.</div>
+  </div>
+</section>
+
+<section class="rule-top" id="import-files">
+  <div class="wrap">
+    <h2>Auction Flex reconciliation: how to bring in your records and bank statement</h2>
+    <p class="measure">SaleLedger has two ways to bring in records. Most auction houses should use <strong>Option B</strong>: one trust ledger CSV in SaleLedger's format, plus the trust account bank statement. If you have an <code>.IIF</code> file of your trust account's checks, deposits and transfers (some tools can produce one), use <strong>Option A</strong>. Otherwise use the ledger template (Option B). For more on each file, see <a href="auction-flex-quickbooks-bank-exports.html">the files behind a trust reconciliation</a>.</p>
+    <div class="note">QuickBooks Desktop can import IIF files. <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/import-export-data-files/export-import-edit-iif-files/L56LT9Z0Q_US_en_US" rel="noopener">Intuit says</a> it can't export transactions as IIF. So you may not have an IIF file to give SaleLedger. Option B needs none.</div>
+
+    <h3>Option B — the trust ledger CSV (start here)</h3>
+    <p class="measure">You choose two files: your ledger CSV and your bank statement. In the app, the ledger box is called <strong>Auction ledger / settlement export (CSV)</strong>. It must be a ledger in the format below. An Auction Flex settlement export won't work in that box.</p>
+    <ol class="howto">
+      <li><a href="saleledger-ledger-template.csv" download>Download the ledger template (CSV)</a>. Open it in Excel or any spreadsheet program.</li>
+      <li>Keep the first row exactly as it is. Those are the headings.</li>
+      <li>Delete the four example rows. Each description starts with "EXAMPLE".</li>
+      <li>Add one row for each money event in the trust account for the period, as described below.</li>
+      <li>Save it as CSV, not as <code>.xlsx</code>.</li>
+    </ol>
+
+    <h3>The columns</h3>
+    <p class="measure">The first five headings are required. If one is missing, the file is refused and the message names it.</p>
+    <ul class="files">
+      <li><code>date</code><span>Required. The day the money moved, or the day a pending settlement was worked out. Write <code>2026-08-31</code> (best), <code>08/31/2026</code> or <code>08-31-2026</code>. A date like <code>04/05/2026</code> is read as April 5.</span></li>
+      <li><code>auction_id</code><span>Required. The auction number, for example <code>246</code>. It ties payouts to the buyer funds of the same auction.</span></li>
+      <li><code>type</code><span>Required. One of the four values below, spelled exactly. A row with any other value is not counted.</span></li>
+      <li><code>party</code><span>Required. Who the money went to or came from. For a consignor payout, write the name as it shows on the bank statement. If the amounts don't match, SaleLedger looks for this name in the bank description.</span></li>
+      <li><code>description</code><span>Required. A short note, for example "Settlement payout - Auction 246". It can appear in exception messages.</span></li>
+      <li><code>gross_amount</code><span>For a buyer receipt: the amount deposited. For a consignor row: the consignor's gross sales.</span></li>
+      <li><code>commission_amount</code><span>For a consignor row: the commission in that settlement. For a commission transfer: the amount moved out of trust.</span></li>
+      <li><code>expense_amount</code>, <code>buyback_amount</code><span>Optional, for your own record. Option B does not use them in its math. Put the result in <code>net_amount</code>.</span></li>
+      <li><code>net_amount</code><span>For a consignor row: what the consignor is paid or owed after commission, expenses and buybacks.</span></li>
+      <li><code>authorized_ref</code><span>A settlement or authorization reference, for example <code>STL-246</code>. Put the same reference on the consignor rows and on the commission transfer that covers them. If a paid consignor row has commission and no commission transfer has the same reference, the report flags it.</span></li>
+      <li><code>funds_available_date</code><span>For a buyer receipt: the day the deposit cleared. A consignor paid before the last of these dates for the same auction is flagged as paid early.</span></li>
+      <li><code>check_number</code><span>For a consignor payout: the check number. It goes into the report's check register. Leave it blank for a wire.</span></li>
+    </ul>
+    <p class="measure" style="margin-top:14px;">Amounts: write them as positive numbers, for example <code>27200.00</code>. <code>$</code> signs and commas are fine. A minus sign or brackets make an amount negative, so don't use them in the ledger. Leave unused amount cells blank.</p>
+
+    <h3>The four type values</h3>
+    <ul class="files">
+      <li><code>buyer_receipt</code><span>Buyer money deposited into trust. Fill in <code>gross_amount</code> (the deposit) and, if you know it, <code>funds_available_date</code>. Use one row per bank deposit, because each row is matched to one deposit.</span></li>
+      <li><code>consignor_disbursement</code><span>A settlement paid to a consignor. Fill in <code>net_amount</code> (the amount paid), <code>gross_amount</code>, <code>commission_amount</code>, <code>authorized_ref</code> and <code>check_number</code>.</span></li>
+      <li><code>commission_transfer</code><span>Commission moved from trust to your operating account. Fill in <code>commission_amount</code> (the amount moved) and <code>authorized_ref</code>.</span></li>
+      <li><code>consignor_settlement_pending</code><span>A settlement worked out but not paid yet. Fill in <code>net_amount</code> (what is owed). These rows make up the consignor subledger total. One older than the stale funds threshold on the as-of date is flagged. When you pay it, change the row to <code>consignor_disbursement</code> with the payment date and check number.</span></li>
+    </ul>
+
+    <h3>Where the rows come from</h3>
+    <p class="measure">You copy records you already keep into the template. You don't need new software.</p>
+    <ul class="plain">
+      <li><strong>Deposit slips or the bank statement</strong> give each <code>buyer_receipt</code>: the date and the amount deposited.</li>
+      <li><strong>Each consignor settlement sheet</strong> gives that consignor's gross, commission and net. Use your Auction Flex settlement report or your paper sheets.</li>
+      <li><strong>The trust checkbook or check stubs</strong> give the date and check number of each payout. Paid settlements become <code>consignor_disbursement</code> rows. Unpaid ones become <code>consignor_settlement_pending</code> rows.</li>
+      <li><strong>Your transfer records</strong> (online banking or the checkbook) give each <code>commission_transfer</code>.</li>
+    </ul>
+    <p class="measure">The easiest way is to add rows as you go: one when you deposit, one when you write a settlement check, one when you move commission. At month end, save the file as CSV and run it with that month's trust statement. The template's four example rows show one of each type.</p>
+
+    <h3>Option A — only if you already have an .IIF file of your trust account</h3>
+    <p class="measure">If you have an <code>.IIF</code> file of your trust account's checks, deposits and transfers (some tools can produce one), use Option A; otherwise use the ledger template (Option B). You choose three files:</p>
+    <ul class="files">
+      <li><code>Settlement export (CSV)</code><span>Consignor Summary, Totals by Consignment Order, or Totals by Item, saved as CSV. The first row must have the headings <code>auction_id</code>, <code>consignor</code>, <code>gross_amount</code> and <code>commission_amount</code>. A Consignment Order file also needs <code>co_number</code>; an item file also needs <code>lot_number</code>. <code>expense_amount</code> and <code>buyback_amount</code> are used when present. SaleLedger adds up each consignor's rows and works out the net owed.</span></li>
+      <li><code>IIF file</code><span>In the app, the box is called <strong>QuickBooks / IIF export for the same auction</strong>. SaleLedger reads its CHECK, DEPOSIT and TRANSFER lines. Each consignor's check must carry the same name as in the settlement export (capital letters don't matter). Deposits named <code>BUYERS</code> count as buyer payments. Transfers named <code>HOUSE</code> count as commission transfers.</span></li>
+      <li><code>Bank statement</code><span>Your trust account statement as CSV, Excel (<code>.xlsx</code>), or OFX/QFX. See the bank statement rules below.</span></li>
+    </ul>
+    <p class="measure" style="margin-top:14px;">Even with an IIF file, SaleLedger counts only deposits named <code>BUYERS</code> and transfers named <code>HOUSE</code>. A deposit or transfer with any other name is left out of your records and can show up as an unmatched bank line. Option A has no pending settlements, so it never reports stale funds. If you have no IIF file, use Option B.</p>
+
+    <h3>Bank statement rules (both options)</h3>
+    <ul class="plain">
+      <li>A CSV or Excel statement needs a date column, a description column and one amount column. Headings such as Date, Transaction Date or Posting Date; Description, Memo or Details; and Amount or Transaction Amount are recognized.</li>
+      <li>Deposits are positive amounts. Withdrawals are negative, either with a minus sign or in brackets. <code>$</code> signs and commas are fine.</li>
+      <li>Dates like <code>2026-08-31</code> or <code>08/31/2026</code> work.</li>
+      <li>In an Excel file, SaleLedger reads the sheet that was open when the file was saved. The first non-empty row is the headings.</li>
+      <li>Use the trust account statement only, not the operating account. A PDF statement can't be read.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="rule-top" id="run-reconciliation">
+  <div class="wrap">
+    <h2>Auction trust account reconciliation, step by step</h2>
+    <ol class="howto">
+      <li>Open SaleLedger and find <strong>Option B</strong> (or <strong>Option A</strong> if you have an IIF file).</li>
+      <li>Choose your files in the file boxes.</li>
+      <li>In <strong>Auction ID/number</strong>, type the auction number (Option A only).</li>
+      <li>In <strong>Opening trust balance ($)</strong>, type the trust account's bank balance on the first day of the period. It can't be negative; use 0.00 if the account was empty.</li>
+      <li>In <strong>Reconciliation as-of date</strong>, type the date as YYYY-MM-DD. It starts as today's date.</li>
+      <li>Option B only: <strong>Stale funds threshold (days)</strong> starts at 14. Change it if you want.</li>
+      <li>Click <strong>Run reconciliation</strong>. The report appears below the forms.</li>
+    </ol>
+    <h3>How to read the result</h3>
+    <p class="measure">The report starts with one status: <strong>IN BALANCE</strong> or <strong>OUT OF BALANCE</strong>. Under it are the three figures that have to agree:</p>
+    <ul class="files">
+      <li><code>Bank adjusted balance</code><span>Your opening balance plus every amount on the bank statement.</span></li>
+      <li><code>Trust control balance</code><span>Your opening balance plus buyer receipts, minus consignor payouts and commission transfers, from your records.</span></li>
+      <li><code>Consignor subledger total</code><span>Your opening balance plus settlements still owed to consignors.</span></li>
+    </ul>
+    <p class="measure" style="margin-top:14px;">The month is IN BALANCE only when all three are exactly equal. That means the records you gave SaleLedger agree with each other. It does not mean every legal requirement has been met.</p>
+    <h3>Next month</h3>
+    <p class="measure">SaleLedger fills in the opening balance from your last run's bank ending balance. Check it against your actual bank statement and change it if it is different. Then choose the new month's files and click <strong>Run reconciliation</strong>.</p>
+  </div>
+</section>
+
+<section class="rule-top" id="read-exceptions">
+  <div class="wrap">
+    <h2>Trust account doesn't match the bank statement? How to read the exceptions</h2>
+    <p class="measure">This is where you find missing auction payments and consignor payout mismatches.</p>
+    <p class="measure">Every gap SaleLedger finds is listed under <strong>Exceptions</strong>, numbered, in plain English. If there are none, it says "No exceptions found." The kinds of exception are:</p>
+    <ul class="files">
+      <li><code>RECEIPT SHORTFALL</code><span>A buyer receipt in your records was larger than the bank deposit it was matched to.</span></li>
+      <li><code>UNMATCHED RECEIPT</code><span>A bank deposit with no matching auction or consignor entry in your records.</span></li>
+      <li><code>DISBURSEMENT MISMATCH</code><span>A consignor payout cleared the bank for a different amount than your records show. It says whether it was an overpayment or an underpayment.</span></li>
+      <li><code>UNMATCHED DISBURSEMENT</code><span>Money left the trust account with no matching entry or authorization in your records.</span></li>
+      <li><code>AMBIGUOUS MATCH</code><span>More than one bank line matches a consignor's surname and none matches the full name. You confirm which one is right.</span></li>
+      <li><code>UNAUTHORIZED DEDUCTION REVIEW</code><span>Commission is part of a consignor's settlement, but no matching authorized commission transfer was found.</span></li>
+      <li><code>PREMATURE DISBURSEMENT</code><span>A consignor was paid before the buyer funds for that auction were available.</span></li>
+      <li><code>STALE FUNDS</code><span>Money owed to a consignor has not been paid out for longer than the stale funds threshold. This uses Option B's pending settlements.</span></li>
+    </ul>
+    <p class="measure" style="margin-top:14px;">Each exception names the amount, the date and the consignor or bank line. SaleLedger identifies the problem; you decide the fix. It never assumes an explanation.</p>
+    <p class="measure">The report ends with a <strong>Check Register</strong>: date, check number, payee and amount for each consignor payout and commission transfer. A payment with no check number shows "(wire/transfer)".</p>
+  </div>
+</section>
+
+<section class="rule-top" id="fix-problems">
+  <div class="wrap">
+    <h2>How to fix a problem SaleLedger flags</h2>
+    <p class="measure">SaleLedger does not change your files or your books. You make the correction where the record lives, then run the month again.</p>
+    <ol class="howto">
+      <li>Read the exception or the red message at the top of the page. It names the amount, date and party involved.</li>
+      <li>Look up that item in your bank statement, your ledger, your settlement sheets or your checkbook.</li>
+      <li>Decide with your bookkeeper or accountant what the correction is, and make it in the source system.</li>
+      <li>Fix the ledger or export the files again, then click <strong>Run reconciliation</strong>.</li>
+    </ol>
+    <p class="measure">Every run is added to your history. If you run the same as-of date twice, both runs are kept.</p>
+    <h3>Common messages</h3>
+    <ul class="files">
+      <li><code>Could not find a matching QuickBooks check for: …</code><span>Option A only. Those consignors are left out of the reconciliation. Make the consignor name the same in the settlement export and the IIF file, then try again.</span></li>
+      <li><code>… check(s) in the QuickBooks file didn't match any consignor</code><span>Option A only. A check's payee name isn't in the settlement export. Check the spelling and that both files are for the same auction.</span></li>
+      <li><code>Could not read your files: …</code><span>A file is missing a required heading, or a date or amount can't be read. The message names the file, the row or the headings it found. Fix the heading or value and try again.</span></li>
+      <li><code>Invalid input: …</code><span>The opening balance isn't a dollar amount or is negative, or the date isn't YYYY-MM-DD.</span></li>
+      <li><code>Couldn't reach the license service …</code><span>Connect to the internet and reload the page.</span></li>
+      <li><code>That license key isn't recognized.</code><span>Check the key and try again. Use <strong>Use a different key</strong> to type a new one.</span></li>
+      <li><code>SaleLedger hit a problem it didn't expect …</code><span>Nothing was changed. Email the line shown to <a href="mailto:support@getsaleledger.com">support@getsaleledger.com</a>.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="rule-top" id="save-report">
+  <div class="wrap">
+    <h2>How to save, print or export the reconciliation report</h2>
+    <p class="measure">Above the report are these buttons:</p>
+    <ul class="files">
+      <li><code>Save report (HTML)</code><span>Downloads the full report as a web page you can open later.</span></li>
+      <li><code>Save as text</code><span>Downloads the report as a plain text file.</span></li>
+      <li><code>Export CSV</code><span>Downloads the status, the three balances, the exceptions and the check register as one CSV you can open in Excel.</span></li>
+      <li><code>Print / save as PDF</code><span>Opens your browser's print window. Choose a printer, or save as PDF.</span></li>
+      <li><code>Email report</code><span>Opens your own email program with the report in the message. A long report is cut short, so attach the saved file too.</span></li>
+    </ul>
+    <div class="note">Keep a copy with the month's records. The app does not store past reports. Saved files are named with the as-of date, for example <code>SaleLedger-Reconciliation-2026-08-31.html</code>.</div>
+  </div>
+</section>
+
+<section class="rule-top" id="backup-move">
+  <div class="wrap">
+    <h2>How to back up SaleLedger or move it to another computer</h2>
+    <p class="measure">Your data lives on your computer, so backing it up is your job. SaleLedger keeps its own files in one folder: <code>C:\Users\<em>your-name</em>\.saleledger</code>. It holds your license key, your agreement record, and <code>history.json</code>, the list of every reconciliation you ran.</p>
+    <h3>Back up</h3>
+    <ol class="howto">
+      <li>Copy the <code>.saleledger</code> folder to your backup drive or folder.</li>
+      <li>Also back up the reports you saved and the source files you used. SaleLedger does not keep copies of them.</li>
+    </ol>
+    <h3>Move to another computer</h3>
+    <ol class="howto">
+      <li>Install SaleLedger on the new computer (<a href="#get-the-app">see above</a>).</li>
+      <li>Copy the <code>.saleledger</code> folder into your user folder on the new computer, at the same place.</li>
+      <li>Open SaleLedger. If it asks, agree and enter your license key again.</li>
+    </ol>
+    <p class="measure">Copying the folder keeps your history and the carried-forward opening balance. Your subscription covers your business's own computers.</p>
+  </div>
+</section>
+
+<section class="rule-top" id="subscribe-cancel-refund">
+  <div class="wrap">
+    <h2>How to subscribe, cancel or get a refund</h2>
+    <h3>Subscribe</h3>
+    <p class="measure">The no-card trial ends without a charge. You don't need to cancel it. To keep using SaleLedger after it ends, choose a paid subscription: US $129.00 per month plus applicable taxes.</p>
+    <ol class="howto">
+      <li>Go to the <a href="https://license.getsaleledger.com/trial">trial page</a> and verify your email again. When your trial has ended, the app's <strong>Manage subscription</strong> link also takes you there.</li>
+      <li>Under your key, click <strong>View paid subscription checkout</strong>. Checkout shows the price. Stripe processes the payment.</li>
+      <li>Completing the purchase starts billing right away. It renews monthly until you cancel. It does not include a second trial.</li>
+      <li>The page after checkout shows your license key. In SaleLedger, click <strong>Use a different key</strong>, paste it, and click <strong>Activate</strong>.</li>
+    </ol>
+    <h3>Cancel a paid subscription</h3>
+    <ol class="howto">
+      <li>Open your billing page: the "Manage subscription" link on your welcome page, or in the app when your subscription needs attention.</li>
+      <li>Choose Cancel. It takes effect immediately for future charges.</li>
+      <li>Or email <a href="mailto:support@getsaleledger.com">support@getsaleledger.com</a> from your subscription address and we'll cancel for you within one business day.</li>
+    </ol>
+    <p class="measure">Your access continues to the end of the current paid period. After that, the app stops running new reconciliations. Reports and history already saved on your computer stay there and remain yours.</p>
+    <h3>Get a refund</h3>
+    <p class="measure">We don't prorate or refund a monthly charge for unused days after you cancel. We will refund a charge in full if:</p>
+    <ul class="plain">
+      <li>you were charged after cancelling before the trial ended or before the renewal date;</li>
+      <li>you were charged twice for the same period; or</li>
+      <li>the App could not run on your Windows computer and we couldn't fix it within a reasonable time after you contacted support.</li>
+    </ul>
+    <ol class="howto">
+      <li>Email <a href="mailto:support@getsaleledger.com">support@getsaleledger.com</a> within 30 days of the charge.</li>
+      <li>Include the receipt date.</li>
+      <li>Refunds go back to the original card and usually appear within 5–10 business days.</li>
+    </ol>
+    <p class="measure">If your state's consumer-protection law gives you refund rights beyond this policy, those rights apply. Please contact us before disputing a charge with your bank. The full rules are in the <a href="refunds.html">Refund &amp; cancellation policy</a> and the <a href="terms.html">Terms</a>.</p>
+  </div>
+</section>
+
+<section class="rule-top" id="get-help">
+  <div class="wrap">
+    <h2>How to get help with SaleLedger</h2>
+    <ol class="howto">
+      <li>Email <a href="mailto:support@getsaleledger.com">support@getsaleledger.com</a>.</li>
+      <li>Say what you were doing and copy any message SaleLedger showed.</li>
+      <li>If you send sample files, you can remove names and amounts first.</li>
+    </ol>
+    <p class="measure">Support is by email, in English, during US business hours, on a best-effort basis. We aim to answer within one business day. Support covers installing and using the app and understanding its reports. It does not include bookkeeping, reconciling your accounts for you, or advice about your legal obligations.</p>
+  </div>
+</section>
+
+<section class="rule-top" id="faq">
+  <div class="wrap">
+    <h2>Common questions</h2>
+    <h3>How much do I owe my consignors?</h3>
+    <p class="measure">Your settlement sheets say what each consignor is owed. In Option B, you write each consignor's net in the ledger's <code>net_amount</code> column. In Option A, SaleLedger works out the net from the settlement export: gross, minus commission, expenses and buybacks. Either way, it checks that net against the payment that cleared the bank and flags any difference. The report's <strong>Consignor subledger total</strong> is your opening balance plus the <code>consignor_settlement_pending</code> rows in an Option B ledger. Option A has no pending rows.</p>
+    <h3>Which consignor settlement report do I need?</h3>
+    <p class="measure">For Option B, use whichever settlement sheet you already have. You copy each consignor's gross, commission and net into the ledger CSV. For Option A, the settlement file is an Auction Flex export: any one of Consignor Summary (Reports #21/#23), Totals by Consignment Order (#24/#25) or Totals by Item (#26/#27), saved as CSV. Option A also needs an IIF file of the trust account. The headings each file needs are listed <a href="#import-files">above</a>.</p>
+    <h3>What are the auctioneer escrow account rules?</h3>
+    <p class="measure">They differ by state. Most states don't require a periodic filing; they reserve the right to examine your trust account. Read your own state's auctioneer rules or ask your licensing board. The report's check register includes the fields named in Wisconsin SPS 125.12(1). Whether your records meet your state's rules is for you and your accountant to determine. Some state rules are summarized on the <a href="/#coverage">home page</a>.</p>
+    <h3>Does SaleLedger do auction house bookkeeping?</h3>
+    <p class="measure">No. It does monthly trust-account reconciliation and nothing else. General bookkeeping, invoicing and payroll stay in QuickBooks or your own system. SaleLedger checks records; it does not provide accounting or legal advice and does not file anything on your behalf.</p>
+  </div>
+</section>
+
+<section class="rule-top final-cta">
+  <div class="wrap">
+    <span class="section-num">Ready for your own month-end</span>
+    <h2>Practise first, then run your own month.</h2>
+    <p class="measure">The <a href="tutorial.html">tutorial</a> has fictional practice files and a walkthrough video, so you can see an out-of-balance month before you use your own records.</p>
+    <div class="cta-row">
+      <a href="https://license.getsaleledger.com/trial" class="btn-primary">Start free trial ↗</a>
+      <a href="tutorial.html" class="btn-secondary">Open the tutorial</a>
+    </div>
+    <p class="consent">By starting, you agree to the <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>. No charge or automatic renewal. An optional paid subscription is US $129.00/month, only after a separate checkout.</p>
+  </div>
+</section>
+
+<div class="wrap"><aside class="ms-store-cta" style="margin:40px 0 8px;padding:20px 22px;border:1px solid rgba(127,127,127,.35);border-radius:10px;display:flex;flex-wrap:wrap;gap:16px;align-items:center"><a href="https://apps.microsoft.com/detail/9N46593KX9HK?mode=direct&amp;cid=sd-index" rel="noopener"><img src="https://get.microsoft.com/images/en-us%20dark.svg" width="180" alt="Get SaleLedger from the Microsoft Store"></a><p style="margin:0;flex:1 1 260px">SaleLedger is in the Microsoft Store. Microsoft checks and signs Store apps, so Windows installs it without an unknown-publisher warning.</p></aside></div>
+<footer>
+  <div class="wrap footer-inner">
+    <a href="/" class="brandmark">
+      <span class="icon-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 3h11l3 3v15H5z"/><path d="M9 9h7M9 13h7M9 17h4"/></svg>
+      </span>
+      <span class="text-stack">
+        <span class="name">SaleLedger</span>
+        <span class="by">by ProfitPin</span>
+      </span>
+    </a>
+    <span class="tagline">Questions: <a href="mailto:support@getsaleledger.com">support@getsaleledger.com</a></span>
+    <div class="legal-links"><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds &amp; cancellation</a> · <a href="licenses.html">Third-party notices</a></div>
+    <p class="legal-note">Auction Flex, HiBid, and QuickBooks are trademarks of their respective owners. SaleLedger is independent software and is not affiliated with, endorsed by, or certified by them or by any state licensing board. SaleLedger checks records; it does not provide accounting or legal advice and does not file anything on your behalf.</p>
+  </div>
+</footer>
+
+<script src="/lead-source.js" defer></script></body>
+</html>

@@ -1,0 +1,5 @@
+date,auction_id,type,party,description,gross_amount,commission_amount,expense_amount,buyback_amount,net_amount,authorized_ref,funds_available_date,check_number
+2026-01-05,EX-1,buyer_receipt,EXAMPLE BUYERS,EXAMPLE - delete this row. Buyer payments deposited for auction EX-1,1000.00,,,,,,2026-01-07,
+2026-01-09,EX-1,consignor_disbursement,Example Consignor,EXAMPLE - delete this row. Settlement check paid for auction EX-1,800.00,120.00,0.00,0.00,680.00,STL-EX-1,,1001
+2026-01-09,EX-1,commission_transfer,EXAMPLE HOUSE,EXAMPLE - delete this row. Commission moved to the operating account for auction EX-1,,150.00,,,,STL-EX-1,,
+2026-01-09,EX-1,consignor_settlement_pending,Example Consignor 2,EXAMPLE - delete this row. Settlement worked out but not paid yet for auction EX-1,200.00,30.00,0.00,0.00,170.00,STL-EX-1,,
